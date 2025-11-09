@@ -1,0 +1,175 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// Enums converted to String for SQLite compatibility
+// UserRole: STUDENT, TEACHER, ADMIN
+// CourseStatus: DRAFT, PUBLISHED, ARCHIVED
+// QuizQuestionType: MULTIPLE_CHOICE, TRUE_FALSE
+// BadgeType: COURSE_COMPLETION, QUIZ_PERFECT_SCORE, QUIZ_PASS, LEARNING_STREAK, MODULE_COMPLETION
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String @default("STUDENT")
+  gradeLevel String? // elementary school, middle school, high school
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  groups        GroupMembership[]
+  courseEnrollments CourseEnrollment[]
+  quizAttempts     QuizAttempt[]
+  badges           UserBadge[]
+  createdGroups    Group[]           @relation("GroupOwner")
+  createdCourses   Course[]          @relation("CourseCreator")
+
+  @@index([email])
+}
+
+model Group {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  code        String   @unique
+  ownerId     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  owner   User              @relation("GroupOwner", fields: [ownerId], references: [id])
+  members GroupMembership[]
+  courses Course[]
+
+  @@index([code])
+}
+
+model GroupMembership {
+  id        String   @id @default(cuid())
+  userId    String
+  groupId   String
+  joinedAt  DateTime @default(now())
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  group Group @relation(fields: [groupId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, groupId])
+  @@index([userId])
+  @@index([groupId])
+}
+
+model Course {
+  id          String       @id @default(cuid())
+  title       String
+  description String?
+  content     String       // JSON string of course content (lessons, etc.)
+  status      String @default("DRAFT")
+  gradeLevel  String?
+  creatorId   String
+  groupId     String?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  creator       User              @relation("CourseCreator", fields: [creatorId], references: [id])
+  group         Group?            @relation(fields: [groupId], references: [id])
+  enrollments   CourseEnrollment[]
+  quizzes       Quiz[]
+  courseBadges  Badge[]           @relation("CourseBadge")
+
+  @@index([creatorId])
+  @@index([groupId])
+  @@index([status])
+}
+
+model CourseEnrollment {
+  id           String    @id @default(cuid())
+  userId       String
+  courseId     String
+  progress     Float     @default(0) // 0-100
+  completedAt  DateTime?
+  enrolledAt   DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([userId])
+  @@index([courseId])
+}
+
+model Quiz {
+  id          String   @id @default(cuid())
+  courseId    String
+  title       String
+  description String?
+  questions   String   // JSON string of quiz questions
+  passingScore Float   @default(70) // Percentage
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  course       Course        @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  attempts     QuizAttempt[]
+  quizBadges   Badge[]       @relation("QuizBadge")
+
+  @@index([courseId])
+}
+
+model QuizAttempt {
+  id           String   @id @default(cuid())
+  userId       String
+  quizId       String
+  answers      String   // JSON string of user answers
+  score        Float    // Percentage
+  feedback     String?  // LLM-generated feedback
+  passed       Boolean
+  completedAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  quiz Quiz @relation(fields: [quizId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([quizId])
+  @@index([completedAt])
+}
+
+model Badge {
+  id          String    @id @default(cuid())
+  name        String
+  description String
+  type        String
+  icon        String?   // Icon name or URL
+  courseId    String?
+  quizId      String?
+  createdAt   DateTime  @default(now())
+
+  course      Course?       @relation("CourseBadge", fields: [courseId], references: [id])
+  quiz        Quiz?         @relation("QuizBadge", fields: [quizId], references: [id])
+  userBadges  UserBadge[]
+
+  @@index([type])
+}
+
+model UserBadge {
+  id        String   @id @default(cuid())
+  userId    String
+  badgeId   String
+  earnedAt  DateTime @default(now())
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badge Badge @relation(fields: [badgeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, badgeId])
+  @@index([userId])
+  @@index([badgeId])
+}
+

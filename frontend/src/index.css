@@ -1,0 +1,350 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fix Leaflet map z-index and overlay issues */
+.leaflet-container {
+  z-index: 0;
+  position: relative;
+  isolation: isolate;
+  /* Allow map interaction but don't interfere with page scroll */
+  touch-action: pan-x pan-y pinch-zoom;
+}
+
+/* When dragging the map, prevent page scroll */
+.leaflet-container.leaflet-dragging {
+  touch-action: none;
+}
+
+/* When zooming the map, allow pinch-zoom */
+.leaflet-container.leaflet-touch-zoom {
+  touch-action: pinch-zoom;
+}
+
+.leaflet-pane {
+  z-index: 400;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 401;
+}
+
+.leaflet-popup-pane {
+  z-index: 1000;
+  position: relative;
+}
+
+.leaflet-tooltip-pane {
+  z-index: 1001;
+  position: relative;
+}
+
+/* Ensure map container doesn't overflow and overlay content */
+.leaflet-container-wrapper {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Fix popup z-index to appear above other content */
+.leaflet-popup {
+  z-index: 1000;
+}
+
+/* Prevent map from interfering with page scroll */
+.leaflet-container.leaflet-grab {
+  cursor: grab;
+}
+
+.leaflet-container.leaflet-dragging {
+  cursor: grabbing;
+}
+
+@layer base {
+  :root {
+    /* Backgrounds */
+    --background: 210 40% 98%; /* #F8FAFC */
+    --foreground: 222 47% 11%; /* #0F172A */
+    
+    /* Card/Surface */
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 222 47% 11%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Primary Dark Green - Deep Forest */
+    --primary: 142 76% 30%; /* #15803D - Dark Forest Green */
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 142 76% 25%; /* #166534 - Deeper Dark Green */
+    
+    /* Secondary Dark Green - Rich Shade */
+    --secondary: 142 76% 32%; /* #15803D - Dark Green */
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent Dark Green - Rich & Deep */
+    --accent: 142 76% 28%; /* #166534 - Very Dark Green */
+    --accent-foreground: 0 0% 100%;
+    
+    /* Success Dark Forest - Achievement */
+    --success: 142 76% 30%; /* #15803D - Dark Forest Green */
+    --success-foreground: 0 0% 100%;
+    
+    /* Muted */
+    --muted: 214 32% 91%; /* #E2E8F0 */
+    --muted-foreground: 215 20% 65%; /* #94A3B8 */
+    
+    /* Destructive/Error */
+    --destructive: 0 72% 51%; /* #DC2626 */
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 214 32% 91%; /* #E2E8F0 */
+    --input: 215 20% 77%; /* #CBD5E1 */
+    --ring: 142 76% 30%; /* Dark Green */
+    
+    /* Focus Ring */
+    --focus-ring: 142 76% 35%; /* Dark Green */
+    
+    /* Text */
+    --text-primary: 222 47% 11%; /* #0F172A */
+    --text-secondary: 215 25% 27%; /* #334155 */
+    --text-disabled: 215 20% 65%; /* #94A3B8 */
+    
+    /* Accent Eco Colors - All Dark Green Shades */
+    --sky: 142 76% 32%; /* #15803D - Dark Green */
+    --sun: 142 76% 30%; /* #15803D - Dark Forest Green */
+    --rose: 142 76% 30%; /* #15803D - Dark Forest Green */
+    --aqua: 142 76% 28%; /* #166534 - Very Dark Green */
+    --lilac: 142 76% 32%; /* #15803D - Dark Green */
+    
+    /* Additional Eco Colors - Nature Tones */
+    --sage: 120 35% 55%; /* #7BA07B - Sage Green (more visible) */
+    
+    /* Functional */
+    --warning: 142 76% 30%; /* #15803D - Dark Green Warning */
+    --info: 142 76% 32%; /* #15803D - Dark Green Info */
+    
+    --radius: 0.75rem; /* 12px default */
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 142 76% 30%; /* Dark Green */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 214 32% 91%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 142 76% 30%; /* Dark Green */
+    
+    /* Eco Gradients - All Dark Green */
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 30% / 0.08), hsl(142 76% 25% / 0.08));
+    --gradient-accent: linear-gradient(135deg, hsl(142 76% 32% / 0.12), hsl(142 76% 28% / 0.12));
+    
+    /* Shadows */
+    --shadow-card: 0 8px 24px 0 rgba(15, 23, 42, 0.08);
+    --shadow-toast: 0 10px 30px rgba(15, 23, 42, 0.12);
+  }
+
+  .dark {
+    /* Dark Backgrounds */
+    --background: 222 71% 9%; /* #0B1220 */
+    --foreground: 220 13% 91%; /* #E5E7EB */
+    
+    /* Dark Surface */
+    --card: 215 28% 17%; /* #111827 */
+    --card-foreground: 220 13% 91%;
+    
+    /* Dark Popover */
+    --popover: 215 28% 17%;
+    --popover-foreground: 220 13% 91%;
+    
+    /* Primary Dark Green - Dark Mode */
+    --primary: 142 76% 35%; /* #16A34A - Dark Green */
+    --primary-foreground: 222 47% 11%;
+    --primary-hover: 142 76% 30%;
+    
+    /* Secondary Dark Green - Dark Mode */
+    --secondary: 142 76% 32%; /* #15803D - Dark Green */
+    --secondary-foreground: 222 47% 11%;
+    
+    /* Accent Dark Green - Dark Mode */
+    --accent: 142 76% 30%; /* #15803D - Dark Forest Green */
+    --accent-foreground: 222 47% 11%;
+    
+    /* Success Dark Green */
+    --success: 142 76% 30%; /* #15803D - Dark Forest Green */
+    --success-foreground: 0 0% 100%;
+    
+    /* Muted */
+    --muted: 215 25% 27%; /* #334155 */
+    --muted-foreground: 215 20% 65%;
+    
+    /* Destructive */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 215 28% 17%; /* #1F2937 */
+    --input: 215 25% 27%; /* #334155 */
+    --ring: 142 76% 35%; /* Dark Green */
+    
+    /* Focus Ring */
+    --focus-ring: 142 76% 35%; /* Dark Green */
+    
+    /* Text */
+    --text-primary: 220 13% 91%;
+    --text-secondary: 215 20% 65%;
+    --text-disabled: 215 25% 27%;
+    
+    /* Sidebar Dark */
+    --sidebar-background: 222 47% 11%; /* #0F172A */
+    --sidebar-foreground: 220 13% 91%;
+    --sidebar-primary: 142 76% 35%; /* Dark Green */
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 215 28% 17%;
+    --sidebar-accent-foreground: 220 13% 91%;
+    --sidebar-border: 215 28% 17%;
+    --sidebar-ring: 142 76% 35%; /* Dark Green */
+    
+    /* Shadows Dark */
+    --shadow-card: 0 8px 28px rgba(0, 0, 0, 0.45);
+    --shadow-toast: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  h1 {
+    @apply text-[44px] leading-[52px] font-extrabold tracking-tight;
+    letter-spacing: -0.4px;
+  }
+  
+  h2 {
+    @apply text-[32px] leading-[40px] font-bold;
+    letter-spacing: -0.2px;
+  }
+  
+  h3 {
+    @apply text-2xl leading-8 font-semibold;
+  }
+  
+  .body-large {
+    @apply text-lg leading-7 font-normal;
+  }
+  
+  .body-small {
+    @apply text-sm leading-5 font-normal;
+  }
+  
+  .caption {
+    @apply text-xs leading-4 font-medium tracking-wide;
+  }
+  
+  .overline {
+    @apply text-[11px] leading-[14px] font-semibold uppercase tracking-wider;
+  }
+}
+
+@layer utilities {
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-toast {
+    box-shadow: var(--shadow-toast);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  /* Animation utilities */
+  .transition-micro {
+    transition: all 140ms ease-in-out;
+  }
+  
+  .transition-standard {
+    transition: all 200ms ease-out;
+  }
+  
+  .transition-overlay {
+    transition: all 250ms ease-out;
+  }
+
+  /* Milestone unlock animations */
+  @keyframes unlock-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes unlock-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 20px 10px hsl(var(--primary) / 0.6);
+    }
+  }
+
+  @keyframes sparkle {
+    0%, 100% {
+      opacity: 0;
+      transform: scale(0) rotate(0deg);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1) rotate(180deg);
+    }
+  }
+
+  .animate-unlock {
+    animation: unlock-pulse 0.6s ease-in-out, unlock-glow 1s ease-in-out;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 0.8s ease-in-out;
+  }
+
+  /* Custom scrollbar for milestones */
+  .milestones-scroll::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .milestones-scroll::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  .milestones-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  .milestones-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+}
