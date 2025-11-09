@@ -1,0 +1,52 @@
+# TerraMindAI Backend - Requirements
+# Install with: pip install -r requirements.txt
+
+# ============================================================================
+# Core Web Framework
+# ============================================================================
+Flask==3.0.0
+flask-cors==4.0.0
+
+# ============================================================================
+# AI/ML Stack
+# ============================================================================
+# Groq API for LLM inference
+groq>=0.4.0
+
+# FAISS for vector similarity search (CPU version)
+# For GPU support, use: faiss-gpu instead of faiss-cpu
+faiss-cpu>=1.7.4
+
+# Sentence transformers for embeddings
+sentence-transformers>=2.2.0
+
+# ============================================================================
+# Data Processing
+# ============================================================================
+# Pandas for data manipulation
+pandas>=2.0.0
+
+# NumPy for numerical operations
+numpy>=1.24.0
+
+# SciPy for statistical functions (linear regression, etc.)
+scipy>=1.10.0
+
+# ============================================================================
+# Text-to-Speech
+# ============================================================================
+# Eleven Labs API for TTS
+elevenlabs>=1.0.0
+
+# ============================================================================
+# Environment & Configuration
+# ============================================================================
+# Load environment variables from .env file
+python-dotenv==1.0.0
+
+# ============================================================================
+# Production Server (Optional - for deployment)
+# ============================================================================
+# Gunicorn WSGI HTTP Server for production deployment
+# Only needed if deploying to production
+gunicorn>=21.2.0

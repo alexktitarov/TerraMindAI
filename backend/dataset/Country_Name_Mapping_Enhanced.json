@@ -1,0 +1,150 @@
+{
+  "mappings": {
+    "australia": {
+      "original": "Australia",
+      "fao": "Australia and New Zealand",
+      "preferred": "Australia and New Zealand"
+    },
+    "brazil": {
+      "original": null,
+      "fao": "Brazil",
+      "preferred": "Brazil"
+    },
+    "bolivia": {
+      "original": null,
+      "fao": "Bolivia (Plurinational State of)",
+      "preferred": "Bolivia (Plurinational State of)"
+    },
+    "paraguay": {
+      "original": null,
+      "fao": "Paraguay",
+      "preferred": "Paraguay"
+    },
+    "uruguay": {
+      "original": null,
+      "fao": "Uruguay",
+      "preferred": "Uruguay"
+    },
+    "south africa": {
+      "original": "Africa",
+      "fao": "Africa",
+      "preferred": "Africa"
+    },
+    "lesotho": {
+      "original": null,
+      "fao": "Lesotho",
+      "preferred": "Lesotho"
+    },
+    "eswatini": {
+      "original": null,
+      "fao": "Eswatini",
+      "preferred": "Eswatini"
+    },
+    "afghanistan": {
+      "original": "Afghanistan",
+      "fao": "Afghanistan",
+      "preferred": "Afghanistan"
+    },
+    "tajikistan": {
+      "original": null,
+      "fao": "Tajikistan",
+      "preferred": "Tajikistan"
+    },
+    "kyrgyzstan": {
+      "original": null,
+      "fao": "Kyrgyzstan",
+      "preferred": "Kyrgyzstan"
+    },
+    "uzbekistan": {
+      "original": null,
+      "fao": "Uzbekistan",
+      "preferred": "Uzbekistan"
+    },
+    "turkmenistan": {
+      "original": null,
+      "fao": "Turkmenistan",
+      "preferred": "Turkmenistan"
+    },
+    "switzerland": {
+      "original": null,
+      "fao": "Switzerland",
+      "preferred": "Switzerland"
+    },
+    "austria": {
+      "original": "Austria",
+      "fao": "Austria",
+      "preferred": "Austria"
+    },
+    "slovakia": {
+      "original": null,
+      "fao": "Czechoslovakia",
+      "preferred": "Czechoslovakia"
+    },
+    "hungary": {
+      "original": null,
+      "fao": "Hungary",
+      "preferred": "Hungary"
+    },
+    "argentina": {
+      "original": "Argentina",
+      "fao": "Argentina",
+      "preferred": "Argentina"
+    },
+    "chile": {
+      "original": null,
+      "fao": "Chile",
+      "preferred": "Chile"
+    },
+    "namibia": {
+      "original": null,
+      "fao": "Namibia",
+      "preferred": "Namibia"
+    },
+    "botswana": {
+      "original": null,
+      "fao": "Botswana",
+      "preferred": "Botswana"
+    },
+    "algeria": {
+      "original": "Algeria",
+      "fao": "Algeria",
+      "preferred": "Algeria"
+    },
+    "belize": {
+      "original": "Belize",
+      "fao": "Belize",
+      "preferred": "Belize"
+    },
+    "belgium": {
+      "original": "Belgium",
+      "fao": "Belgium",
+      "preferred": "Belgium"
+    },
+    "netherlands": {
+      "original": null,
+      "fao": "Netherlands Antilles (former)",
+      "preferred": "Netherlands Antilles (former)"
+    },
+    "luxembourg": {
+      "original": null,
+      "fao": "Luxembourg",
+      "preferred": "Luxembourg"
+    },
+    "denmark": {
+      "original": null,
+      "fao": "Denmark",
+      "preferred": "Denmark"
+    }
+  },
+  "standard_mappings": {
+    "united states": "United States",
+    "usa": "United States",
+    "us": "United States",
+    "united states of america": "United States",
+    "czech republic": "Czechia",
+    "south africa": "Africa",
+    "bolivia": "Bolivia (Plurinational State of)",
+    "netherlands": "Netherlands",
+    "belgium-luxembourg": "Belgium"
+  }
+}

@@ -1,0 +1,1509 @@
+/Users/alex/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[INFO] Initializing RAG system...
+🔄 Loading embedding model: sentence-transformers/all-MiniLM-L6-v2...
+✅ Initialized RAG with sentence-transformers/all-MiniLM-L6-v2 (dimension: 384)
+✅ Initialized FAISS index (dimension: 384)
+[INFO] RAG system initialized successfully
+[INFO] Loading dataset: temperature_by_country from GlobalLandTemperaturesByCountry.csv...
+📖 Loading dataset from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalLandTemperaturesByCountry.csv...
+✅ Loaded 75 records from dataset
+📚 Adding 75 documents to vector store...
+  Processing document 1/75...
+✅ Added 75 documents. Total documents: 75
+[INFO] Successfully loaded temperature_by_country
+[INFO] Loading dataset: temperature_by_city from GlobalLandTemperaturesByCity.csv...
+📖 Loading dataset from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalLandTemperaturesByCity.csv...
+✅ Loaded 35 records from dataset
+📚 Adding 35 documents to vector store...
+  Processing document 1/35...
+✅ Added 35 documents. Total documents: 110
+[INFO] Successfully loaded temperature_by_city
+[INFO] Loading dataset: global_temperatures from GlobalTemperatures.csv...
+📖 Loading dataset from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalTemperatures.csv...
+⚠️ Dataset has 3192 rows, sampling first 1000 for processing
+✅ Loaded 1000 records from dataset
+📚 Adding 1000 documents to vector store...
+  Processing document 1/1000...
+  Processing document 101/1000...
+  Processing document 201/1000...
+  Processing document 301/1000...
+  Processing document 401/1000...
+  Processing document 501/1000...
+  Processing document 601/1000...
+  Processing document 701/1000...
+  Processing document 801/1000...
+  Processing document 901/1000...
+✅ Added 1000 documents. Total documents: 1110
+[INFO] Successfully loaded global_temperatures
+[INFO] Loading dataset: climate_headlines from climate_headlines_sentiment.csv...
+📖 Loading dataset from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/climate_headlines_sentiment.csv...
+⚠️ Dataset has 1024 rows, sampling first 1000 for processing
+✅ Loaded 1000 records from dataset
+📚 Adding 1000 documents to vector store...
+  Processing document 1/1000...
+  Processing document 101/1000...
+  Processing document 201/1000...
+  Processing document 301/1000...
+  Processing document 401/1000...
+  Processing document 501/1000...
+  Processing document 601/1000...
+  Processing document 701/1000...
+  Processing document 801/1000...
+  Processing document 901/1000...
+✅ Added 1000 documents. Total documents: 2110
+[INFO] Successfully loaded climate_headlines
+[DEBUG] Groq client initialized successfully
+[DEBUG] Using model: llama-3.3-70b-versatile
+[INFO] Port 5000 is in use, using port 5001 instead
+ * Serving Flask app 'app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://10.0.6.14:5001
+Press CTRL+C to quit
+ * Restarting with stat
+/Users/alex/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+ * Debugger is active!
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+ * Debugger PIN: 949-957-475
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Germany HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=United+Kingdom HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Brazil HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Australia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=France HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Japan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=United+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=China HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=India HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Canada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Spain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Italy HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Russia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Mexico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=South+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Afghanistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Algeria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Albania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Angola HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:06] "GET /visualization/combined-country-temperature?country=Andorra HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:07] "GET /visualization/combined-country-temperature?country=Argentina HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:07] "GET /visualization/combined-country-temperature?country=Antigua+And+Barbuda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:07] "GET /visualization/combined-country-temperature?country=Australia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:07] "GET /visualization/combined-country-temperature?country=Armenia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:07] "GET /visualization/combined-country-temperature?country=Austria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:07] "GET /visualization/combined-country-temperature?country=Barbados HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:07] "GET /visualization/combined-country-temperature?country=Bahrain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:07] "GET /visualization/combined-country-temperature?country=Bahamas HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:07] "GET /visualization/combined-country-temperature?country=Bangladesh HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:07] "GET /visualization/combined-country-temperature?country=Azerbaijan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=Belize HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=Benin HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=Bhutan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=Belarus HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=Belgium HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=Bosnia+And+Herzegovina HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=Botswana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=Brazil HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=Bolivia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=Brunei HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=Canada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=China HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=France HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=India HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:08] "GET /visualization/combined-country-temperature?country=Italy HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:09] "GET /visualization/combined-country-temperature?country=Japan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:09] "GET /visualization/combined-country-temperature?country=Mexico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:09] "GET /visualization/combined-country-temperature?country=Netherlands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:09] "GET /visualization/combined-country-temperature?country=Russia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:09] "GET /visualization/combined-country-temperature?country=South+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:09] "GET /visualization/combined-country-temperature?country=Spain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:09] "GET /visualization/combined-country-temperature?country=United+Kingdom HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:09] "GET /visualization/combined-country-temperature?country=United+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=United+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=United+Kingdom HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=France HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Germany HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Japan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Brazil HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=China HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Australia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=India HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Russia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Canada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Italy HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Spain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Mexico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Afghanistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Albania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=American+Samoa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=South+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Algeria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Americas HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Annex+I+countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Angola HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Anguilla HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:32] "GET /visualization/combined-country-temperature?country=Andorra HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=United+Kingdom HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=United+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Germany HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=France HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Japan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Brazil HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Australia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=India HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=China HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Canada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Russia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Italy HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Mexico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Spain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=South+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=American+Samoa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Afghanistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Albania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Algeria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Americas HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Annex+I+countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Anguilla HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Angola HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:33] "GET /visualization/combined-country-temperature?country=Andorra HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Antarctica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Antigua+And+Barbuda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Antigua+and+Barbuda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Argentina HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Armenia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Australia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Aruba HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Austria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Australia+and+New+Zealand HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Bahrain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Baker+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Azerbaijan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Bahamas HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:34] "GET /visualization/combined-country-temperature?country=Bangladesh HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:35] "GET /visualization/combined-country-temperature?country=Barbados HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:35] "GET /visualization/combined-country-temperature?country=Belarus HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:35] "GET /visualization/combined-country-temperature?country=Belize HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:35] "GET /visualization/combined-country-temperature?country=United+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:35] "GET /visualization/combined-country-temperature?country=Belgium HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:35] "GET /visualization/combined-country-temperature?country=Belgium-Luxembourg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:35] "GET /visualization/combined-country-temperature?country=Benin HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:35] "GET /visualization/combined-country-temperature?country=Bhutan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:35] "GET /visualization/combined-country-temperature?country=Bolivia+(Plurinational+State+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:35] "GET /visualization/combined-country-temperature?country=Bosnia+and+Herzegovina HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:35] "GET /visualization/combined-country-temperature?country=Botswana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Brunei+Darussalam HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Brazil HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=British+Virgin+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Bulgaria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Burkina+Faso HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Canada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Burundi HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Cambodia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Cabo+Verde HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Cameroon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Cayman+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Caribbean HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Central+America HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Central+African+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:36] "GET /visualization/combined-country-temperature?country=Central+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=Chad HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=China HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=Channel+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=China,+Hong+Kong+SAR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=Chile HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=China,+Taiwan+Province+of HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=China,+mainland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=China,+Macao+SAR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=Christmas+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=Cocos+(Keeling)+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=Comoros HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=Congo HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=Colombia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=Costa+Rica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:37] "GET /visualization/combined-country-temperature?country=Cook+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:38] "GET /visualization/combined-country-temperature?country=Cuba HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:38] "GET /visualization/combined-country-temperature?country=Croatia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:38] "GET /visualization/combined-country-temperature?country=Czechia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:38] "GET /visualization/combined-country-temperature?country=Cyprus HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:38] "GET /visualization/combined-country-temperature?country=Côte+d'Ivoire HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:38] "GET /visualization/combined-country-temperature?country=Democratic+People's+Republic+of+Korea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:38] "GET /visualization/combined-country-temperature?country=Democratic+Republic+of+the+Congo HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:38] "GET /visualization/combined-country-temperature?country=Denmark HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:38] "GET /visualization/combined-country-temperature?country=Djibouti HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:38] "GET /visualization/combined-country-temperature?country=Dominica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Dominican+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Eastern+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Eastern+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Ecuador HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Eastern+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=El+Salvador HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Egypt HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Eritrea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Estonia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Equatorial+Guinea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=European+Union HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Eswatini HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Ethiopia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Ethiopia+PDR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:39] "GET /visualization/combined-country-temperature?country=Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=Falkland+Islands+(Malvinas) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=Faroe+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=Finland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=France HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=Fiji HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=French+Guiana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=French+Polynesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=French+Southern+and+Antarctic+Territories HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=Gabon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=Gambia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=Gibraltar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=Greece HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=Ghana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=Georgia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:40] "GET /visualization/combined-country-temperature?country=Greenland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:41] "GET /visualization/combined-country-temperature?country=Guadeloupe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:41] "GET /visualization/combined-country-temperature?country=Grenada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:41] "GET /visualization/combined-country-temperature?country=Guinea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:41] "GET /visualization/combined-country-temperature?country=Guinea-Bissau HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:41] "GET /visualization/combined-country-temperature?country=Guatemala HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:41] "GET /visualization/combined-country-temperature?country=Haiti HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:41] "GET /visualization/combined-country-temperature?country=Guyana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:41] "GET /visualization/combined-country-temperature?country=Hungary HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:41] "GET /visualization/combined-country-temperature?country=Holy+See HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:41] "GET /visualization/combined-country-temperature?country=Honduras HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Iceland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Indonesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=India HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Iran+(Islamic+Republic+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Iraq HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Isle+of+Man HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Israel HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Ireland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Italy HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Jamaica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Jordan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Kazakhstan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Kenya HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Japan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:42] "GET /visualization/combined-country-temperature?country=Kiribati HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:43] "GET /visualization/combined-country-temperature?country=Kyrgyzstan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:43] "GET /visualization/combined-country-temperature?country=Kuwait HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:43] "GET /visualization/combined-country-temperature?country=Land+Locked+Developing+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:43] "GET /visualization/combined-country-temperature?country=Lao+People's+Democratic+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:43] "GET /visualization/combined-country-temperature?country=Latvia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:43] "GET /visualization/combined-country-temperature?country=Lebanon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:43] "GET /visualization/combined-country-temperature?country=Least+Developed+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:43] "GET /visualization/combined-country-temperature?country=Lesotho HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:43] "GET /visualization/combined-country-temperature?country=Liberia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:43] "GET /visualization/combined-country-temperature?country=Libya HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:43] "GET /visualization/combined-country-temperature?country=Liechtenstein HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:43] "GET /visualization/combined-country-temperature?country=Lithuania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Low+Income+Food+Deficit+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Luxembourg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Madagascar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Malaysia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Malawi HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Maldives HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Mali HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Malta HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Mauritania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Marshall+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Martinique HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Mauritius HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:44] "GET /visualization/combined-country-temperature?country=Mayotte HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Micronesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Melanesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Micronesia+(Federated+States+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Mexico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Middle+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Monaco HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Montenegro HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Mongolia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Midway+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Montserrat HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Myanmar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Mozambique HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Nauru HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Morocco HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:45] "GET /visualization/combined-country-temperature?country=Namibia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:46] "GET /visualization/combined-country-temperature?country=Nepal HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:46] "GET /visualization/combined-country-temperature?country=Net+Food+Importing+Developing+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:46] "GET /visualization/combined-country-temperature?country=Netherlands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:46] "GET /visualization/combined-country-temperature?country=Netherlands+Antilles+(former) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:46] "GET /visualization/combined-country-temperature?country=New+Caledonia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:46] "GET /visualization/combined-country-temperature?country=Niger HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:46] "GET /visualization/combined-country-temperature?country=Nicaragua HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:46] "GET /visualization/combined-country-temperature?country=Niue HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:46] "GET /visualization/combined-country-temperature?country=New+Zealand HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:46] "GET /visualization/combined-country-temperature?country=Nigeria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Non-Annex+I+countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Norfolk+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=North+Macedonia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Northern+America HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Northern+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Northern+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Norway HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=OECD HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Oceania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Oman HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Pakistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Palestine HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Palau HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Panama HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:47] "GET /visualization/combined-country-temperature?country=Pacific+Islands+Trust+Territory HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Peru HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Paraguay HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Papua+New+Guinea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Philippines HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Pitcairn+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Polynesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Poland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Puerto+Rico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Portugal HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Qatar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Republic+of+Korea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Republic+of+Moldova HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:48] "GET /visualization/combined-country-temperature?country=Romania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:49] "GET /visualization/combined-country-temperature?country=Russian+Federation HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:49] "GET /visualization/combined-country-temperature?country=Rwanda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:49] "GET /visualization/combined-country-temperature?country=Réunion HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:49] "GET /visualization/combined-country-temperature?country=Saint+Helena,+Ascension+and+Tristan+da+Cunha HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:49] "GET /visualization/combined-country-temperature?country=Saint+Kitts+and+Nevis HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:49] "GET /visualization/combined-country-temperature?country=Saint+Lucia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:49] "GET /visualization/combined-country-temperature?country=Saint+Pierre+and+Miquelon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:49] "GET /visualization/combined-country-temperature?country=San+Marino HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:49] "GET /visualization/combined-country-temperature?country=Saint+Vincent+and+the+Grenadines HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:49] "GET /visualization/combined-country-temperature?country=Sao+Tome+and+Principe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:49] "GET /visualization/combined-country-temperature?country=Saudi+Arabia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:49] "GET /visualization/combined-country-temperature?country=Samoa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=Senegal HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=Serbia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=Sierra+Leone HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=Serbia+and+Montenegro HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=Seychelles HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=Small+Island+Developing+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=Singapore HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=Slovenia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=Solomon+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=Somalia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=South+America HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=South+Georgia+and+the+South+Sandwich+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=South+Sudan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=South+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:50] "GET /visualization/combined-country-temperature?country=South-Eastern+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:51] "GET /visualization/combined-country-temperature?country=Southern+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:51] "GET /visualization/combined-country-temperature?country=Southern+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:51] "GET /visualization/combined-country-temperature?country=Sri+Lanka HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:51] "GET /visualization/combined-country-temperature?country=Spain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:51] "GET /visualization/combined-country-temperature?country=Southern+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:51] "GET /visualization/combined-country-temperature?country=Sudan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:51] "GET /visualization/combined-country-temperature?country=Sudan+(former) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:51] "GET /visualization/combined-country-temperature?country=Suriname HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:51] "GET /visualization/combined-country-temperature?country=Svalbard+and+Jan+Mayen+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:51] "GET /visualization/combined-country-temperature?country=Sweden HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Syrian+Arab+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Switzerland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Tajikistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Thailand HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Timor-Leste HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Togo HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Tokelau HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Tonga HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Trinidad+and+Tobago HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Tunisia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Turkey HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Turkmenistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Turks+and+Caicos+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Tuvalu HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:52] "GET /visualization/combined-country-temperature?country=Uganda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET /visualization/combined-country-temperature?country=United+Kingdom HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET /visualization/combined-country-temperature?country=United+Arab+Emirates HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET /visualization/combined-country-temperature?country=United+Republic+of+Tanzania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET /visualization/combined-country-temperature?country=United+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET /visualization/combined-country-temperature?country=Ukraine HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET /visualization/combined-country-temperature?country=United+States+Virgin+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET /visualization/combined-country-temperature?country=Uzbekistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET /visualization/combined-country-temperature?country=Uruguay HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET /visualization/combined-country-temperature?country=Venezuela+(Bolivarian+Republic+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET /visualization/combined-country-temperature?country=Vanuatu HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET /visualization/combined-country-temperature?country=Viet+Nam HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:53] "GET /visualization/combined-country-temperature?country=Wake+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:54] "GET /visualization/combined-country-temperature?country=Wallis+and+Futuna+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:54] "GET /visualization/combined-country-temperature?country=Western+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:54] "GET /visualization/combined-country-temperature?country=Western+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:54] "GET /visualization/combined-country-temperature?country=Western+Sahara HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:54] "GET /visualization/combined-country-temperature?country=Western+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:54] "GET /visualization/combined-country-temperature?country=World HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:54] "GET /visualization/combined-country-temperature?country=Zambia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:54] "GET /visualization/combined-country-temperature?country=Yugoslav+SFR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:54] "GET /visualization/combined-country-temperature?country=Zimbabwe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:45:54] "GET /visualization/combined-country-temperature?country=Åland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:46:06] "GET / HTTP/1.1" 200 -
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+huggingface/tokenizers: The current process just got forked, after parallelism has already been used. Disabling parallelism to avoid deadlocks...
+To disable this warning, you can either:
+	- Avoid using `tokenizers` before the fork if possible
+	- Explicitly set the environment variable TOKENIZERS_PARALLELISM=(true | false)
+[INFO] Initializing RAG system...
+🔄 Loading embedding model: sentence-transformers/all-MiniLM-L6-v2...
+✅ Initialized RAG with sentence-transformers/all-MiniLM-L6-v2 (dimension: 384)
+✅ Initialized FAISS index (dimension: 384)
+[INFO] RAG system initialized successfully
+[INFO] Loading dataset: temperature_by_country from GlobalLandTemperaturesByCountry.csv...
+📖 Loading dataset from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalLandTemperaturesByCountry.csv...
+✅ Loaded 75 records from dataset
+📚 Adding 75 documents to vector store...
+  Processing document 1/75...
+✅ Added 75 documents. Total documents: 75
+[INFO] Successfully loaded temperature_by_country
+[INFO] Loading dataset: temperature_by_city from GlobalLandTemperaturesByCity.csv...
+📖 Loading dataset from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalLandTemperaturesByCity.csv...
+✅ Loaded 35 records from dataset
+📚 Adding 35 documents to vector store...
+  Processing document 1/35...
+✅ Added 35 documents. Total documents: 110
+[INFO] Successfully loaded temperature_by_city
+[INFO] Loading dataset: global_temperatures from GlobalTemperatures.csv...
+📖 Loading dataset from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalTemperatures.csv...
+⚠️ Dataset has 3192 rows, sampling first 1000 for processing
+✅ Loaded 1000 records from dataset
+📚 Adding 1000 documents to vector store...
+  Processing document 1/1000...
+  Processing document 101/1000...
+  Processing document 201/1000...
+  Processing document 301/1000...
+  Processing document 401/1000...
+  Processing document 501/1000...
+  Processing document 601/1000...
+  Processing document 701/1000...
+  Processing document 801/1000...
+  Processing document 901/1000...
+✅ Added 1000 documents. Total documents: 1110
+[INFO] Successfully loaded global_temperatures
+[INFO] Loading dataset: climate_headlines from climate_headlines_sentiment.csv...
+📖 Loading dataset from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/climate_headlines_sentiment.csv...
+⚠️ Dataset has 1024 rows, sampling first 1000 for processing
+✅ Loaded 1000 records from dataset
+📚 Adding 1000 documents to vector store...
+  Processing document 1/1000...
+  Processing document 101/1000...
+  Processing document 201/1000...
+  Processing document 301/1000...
+  Processing document 401/1000...
+  Processing document 501/1000...
+  Processing document 601/1000...
+  Processing document 701/1000...
+  Processing document 801/1000...
+  Processing document 901/1000...
+✅ Added 1000 documents. Total documents: 2110
+[INFO] Successfully loaded climate_headlines
+[DEBUG] Groq client initialized successfully
+[DEBUG] Using model: llama-3.3-70b-versatile
+[INFO] Port 5000 is in use, using port 5001 instead
+[INFO] Loading absolute temperature data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalLandTemperaturesByCountry.csv...
+[INFO] Loading absolute temperature data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalLandTemperaturesByCountry.csv...
+[VISUALIZATION] Loading countries...
+[INFO] Loading absolute temperature data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalLandTemperaturesByCountry.csv...
+[INFO] Loading absolute temperature data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalLandTemperaturesByCountry.csv...
+[INFO] Loading absolute temperature data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalLandTemperaturesByCountry.csv...
+[INFO] Loading absolute temperature data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalLandTemperaturesByCountry.csv...
+[INFO] Loading absolute temperature data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/GlobalLandTemperaturesByCountry.csv...
+[INFO] Loaded 57,706 absolute temperature records for 25 countries
+[INFO] Loaded 57,706 absolute temperature records for 25 countries
+[INFO] Loaded 57,706 absolute temperature records for 25 countries
+[INFO] Loaded 57,706 absolute temperature records for 25 countries
+[INFO] Date range: 1743 to 2013
+[INFO] Date range: 1743 to 2013
+[INFO] Loading FAO temperature change data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/FAO_TemperatureChange_Processed.csv...
+[INFO] Date range: 1743 to 2013
+[INFO] Date range: 1743 to 2013
+[INFO] Loaded 57,706 absolute temperature records for 25 countries
+[INFO] Loading FAO temperature change data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/FAO_TemperatureChange_Processed.csv...
+[INFO] Loading FAO temperature change data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/FAO_TemperatureChange_Processed.csv...
+[INFO] Date range: 1743 to 2013
+[INFO] Loading FAO temperature change data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/FAO_TemperatureChange_Processed.csv...
+[INFO] Loading FAO temperature change data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/FAO_TemperatureChange_Processed.csv...
+[INFO] Loaded 57,706 absolute temperature records for 25 countries
+[INFO] Date range: 1743 to 2013
+[INFO] Loaded 57,706 absolute temperature records for 25 countries
+[INFO] Loading FAO temperature change data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/FAO_TemperatureChange_Processed.csv...
+[INFO] Date range: 1743 to 2013
+[INFO] Loading FAO temperature change data from /Users/alex/PycharmProjects/Hackathone_final/backend/dataset/FAO_TemperatureChange_Processed.csv...
+[INFO] Loaded 14,975 temperature change records for 284 countries
+[INFO] Date range: 1961 to 2019
+[INFO] Loaded 14,975 temperature change records for 284 countries
+[INFO] Date range: 1961 to 2019
+[INFO] Loaded 14,975 temperature change records for 284 countries
+[INFO] Date range: 1961 to 2019
+[INFO] Loaded 14,975 temperature change records for 284 countries
+[INFO] Date range: 1961 to 2019
+[INFO] Loaded 14,975 temperature change records for 284 countries
+[INFO] Date range: 1961 to 2019
+[INFO] Loaded 14,975 temperature change records for 284 countries
+[INFO] Date range: 1961 to 2019
+[VISUALIZATION] Loaded 287 countries
+[VISUALIZATION] Countries request: search='', limit=None, returned 287 countries
+[INFO] Loaded 14,975 temperature change records for 284 countries
+[INFO] Date range: 1961 to 2019
+[VISUALIZATION] Loading countries...
+[VISUALIZATION] Loaded 287 countries
+[VISUALIZATION] Countries request: search='', limit=None, returned 287 countries
+[VISUALIZATION] Loading countries...
+[VISUALIZATION] Loaded 287 countries
+[VISUALIZATION] Countries request: search='', limit=None, returned 287 countries
+
+================================================================================
+[LEARNING MATERIAL GENERATION] Received Request:
+================================================================================
+  Method: POST
+  lesson_id: 'climate_situation_in_slovakia'
+  person_id: 'course_creator'
+  material_type: comprehensive
+  difficulty: easy
+  length: short
+  use_rag: True
+  context_k: 5
+  dataset_name: climate
+================================================================================
+
+[LEARNING MATERIAL GENERATION] Retrieving RAG context...
+  Query: lesson_id='climate_situation_in_slovakia', dataset_name=climate, k=5
+  No context with person_id filter, trying without person_id...
+  No context with lesson_id filter, trying general search...
+  ⚠️  No context found - will generate learning material without specific context
+
+[LEARNING MATERIAL GENERATION] Building prompt...
+  Context available: False
+  No context
+  Material type: comprehensive
+  Difficulty: easy
+  Length: short (~1500 tokens)
+
+[LEARNING MATERIAL GENERATION] Calling Groq API...
+  Model: llama-3.3-70b-versatile
+  Temperature: 0.7
+  Max tokens: 1500
+  Prompt length: 2033 characters
+  ✅ API response received in 2.01s
+  Response length: 4257 characters
+
+[LEARNING MATERIAL GENERATION] Processing response...
+  ✅ Learning material parsed successfully
+    Title: Climate Situation in Slovakia...
+    Pages: 3
+      Page 1 length: 996 characters
+      Page 2 length: 1116 characters
+127.0.0.1 - - [09/Nov/2025 21:46:21] "POST /generate-learning-material HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:46:23] "POST /generate-questions HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:32] "GET /visualization/countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:32] "GET /visualization/combined-country-temperature?country=Brazil HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:32] "GET /visualization/combined-country-temperature?country=United+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:32] "GET /visualization/combined-country-temperature?country=United+Kingdom HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:32] "GET /visualization/combined-country-temperature?country=Germany HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:32] "GET /visualization/combined-country-temperature?country=France HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:32] "GET /visualization/combined-country-temperature?country=Japan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=India HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=China HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Italy HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Russia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Canada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Australia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Spain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Mexico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Afghanistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=South+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Albania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Algeria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=American+Samoa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Americas HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Angola HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Annex+I+countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Anguilla HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Andorra HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Antarctica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Antigua+and+Barbuda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Antigua+And+Barbuda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Argentina HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:33] "GET /visualization/combined-country-temperature?country=Armenia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:34] "GET /visualization/combined-country-temperature?country=Australia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:34] "GET /visualization/combined-country-temperature?country=Aruba HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:34] "GET /visualization/combined-country-temperature?country=Australia+and+New+Zealand HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:34] "GET /visualization/combined-country-temperature?country=Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:34] "GET /visualization/combined-country-temperature?country=Austria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:34] "GET /visualization/combined-country-temperature?country=Azerbaijan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:34] "GET /visualization/combined-country-temperature?country=Bahrain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:34] "GET /visualization/combined-country-temperature?country=Bangladesh HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:34] "GET /visualization/combined-country-temperature?country=Baker+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:34] "GET /visualization/combined-country-temperature?country=Bahamas HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Belize HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Barbados HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Belarus HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Belgium HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Belgium-Luxembourg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Bolivia+(Plurinational+State+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Benin HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Bhutan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Bosnia+and+Herzegovina HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Botswana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Brazil HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=British+Virgin+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Bulgaria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Brunei+Darussalam HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:35] "GET /visualization/combined-country-temperature?country=Burkina+Faso HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:36] "GET /visualization/combined-country-temperature?country=Burundi HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:36] "GET /visualization/combined-country-temperature?country=Canada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:36] "GET /visualization/combined-country-temperature?country=Cameroon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:36] "GET /visualization/combined-country-temperature?country=Cabo+Verde HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:36] "GET /visualization/combined-country-temperature?country=Cambodia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:36] "GET /visualization/combined-country-temperature?country=Caribbean HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:36] "GET /visualization/combined-country-temperature?country=Cayman+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:36] "GET /visualization/combined-country-temperature?country=Central+America HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:36] "GET /visualization/combined-country-temperature?country=Central+African+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:36] "GET /visualization/combined-country-temperature?country=Central+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=China HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=Chad HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=Channel+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=China,+Hong+Kong+SAR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=Chile HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=China,+Taiwan+Province+of HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=China,+Macao+SAR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=China,+mainland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=Cocos+(Keeling)+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=Christmas+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=Colombia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=Comoros HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=Cook+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=Congo HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:37] "GET /visualization/combined-country-temperature?country=Costa+Rica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:38] "GET /visualization/combined-country-temperature?country=Croatia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:38] "GET /visualization/combined-country-temperature?country=Cuba HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:38] "GET /visualization/combined-country-temperature?country=Czechia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:38] "GET /visualization/combined-country-temperature?country=Cyprus HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:38] "GET /visualization/combined-country-temperature?country=Côte+d'Ivoire HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:38] "GET /visualization/combined-country-temperature?country=Democratic+People's+Republic+of+Korea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:38] "GET /visualization/combined-country-temperature?country=Democratic+Republic+of+the+Congo HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:38] "GET /visualization/combined-country-temperature?country=Denmark HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:38] "GET /visualization/combined-country-temperature?country=Djibouti HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:38] "GET /visualization/combined-country-temperature?country=Dominica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:38] "GET /visualization/combined-country-temperature?country=Dominican+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=Eastern+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=Ecuador HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=Eastern+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=Eastern+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=Egypt HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=El+Salvador HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=Equatorial+Guinea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=Estonia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=Eritrea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=Ethiopia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=Eswatini HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=Ethiopia+PDR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:39] "GET /visualization/combined-country-temperature?country=European+Union HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=Falkland+Islands+(Malvinas) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=Fiji HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=Faroe+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=France HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=Finland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=French+Polynesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=French+Guiana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=Gabon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=French+Southern+and+Antarctic+Territories HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=Gambia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=Ghana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=Georgia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=Gibraltar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=Greenland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:40] "GET /visualization/combined-country-temperature?country=Greece HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:41] "GET /visualization/combined-country-temperature?country=Guadeloupe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:41] "GET /visualization/combined-country-temperature?country=Grenada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:41] "GET /visualization/combined-country-temperature?country=Guatemala HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:41] "GET /visualization/combined-country-temperature?country=Guinea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:41] "GET /visualization/combined-country-temperature?country=Guinea-Bissau HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:41] "GET /visualization/combined-country-temperature?country=Guyana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:41] "GET /visualization/combined-country-temperature?country=Haiti HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:41] "GET /visualization/combined-country-temperature?country=Holy+See HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:41] "GET /visualization/combined-country-temperature?country=Honduras HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:41] "GET /visualization/combined-country-temperature?country=Hungary HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Iceland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=India HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Iran+(Islamic+Republic+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Indonesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Iraq HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Isle+of+Man HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Israel HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Ireland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Italy HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Jamaica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Japan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Jordan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Kazakhstan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Kiribati HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:42] "GET /visualization/combined-country-temperature?country=Kenya HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:43] "GET /visualization/combined-country-temperature?country=Kuwait HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:43] "GET /visualization/combined-country-temperature?country=Kyrgyzstan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:43] "GET /visualization/combined-country-temperature?country=Latvia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:43] "GET /visualization/combined-country-temperature?country=Lao+People's+Democratic+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:43] "GET /visualization/combined-country-temperature?country=Land+Locked+Developing+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:43] "GET /visualization/combined-country-temperature?country=Least+Developed+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:43] "GET /visualization/combined-country-temperature?country=Lesotho HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:43] "GET /visualization/combined-country-temperature?country=Lebanon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:43] "GET /visualization/combined-country-temperature?country=Liberia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:43] "GET /visualization/combined-country-temperature?country=Libya HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Liechtenstein HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Low+Income+Food+Deficit+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Luxembourg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Lithuania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Madagascar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Malawi HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Maldives HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Malaysia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Mali HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Malta HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Marshall+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Martinique HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Mauritania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Mauritius HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:44] "GET /visualization/combined-country-temperature?country=Mayotte HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:45] "GET /visualization/combined-country-temperature?country=Mexico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:45] "GET /visualization/combined-country-temperature?country=Melanesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:45] "GET /visualization/combined-country-temperature?country=Micronesia+(Federated+States+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:45] "GET /visualization/combined-country-temperature?country=Micronesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:45] "GET /visualization/combined-country-temperature?country=Middle+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:45] "GET /visualization/combined-country-temperature?country=Monaco HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:45] "GET /visualization/combined-country-temperature?country=Mongolia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:45] "GET /visualization/combined-country-temperature?country=Montenegro HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:45] "GET /visualization/combined-country-temperature?country=Montserrat HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:45] "GET /visualization/combined-country-temperature?country=Midway+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Mozambique HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Myanmar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Namibia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Morocco HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Nauru HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Nepal HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Netherlands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Netherlands+Antilles+(former) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Net+Food+Importing+Developing+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=New+Caledonia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Nicaragua HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Nigeria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Niger HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=New+Zealand HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:46] "GET /visualization/combined-country-temperature?country=Niue HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:47] "GET /visualization/combined-country-temperature?country=Norfolk+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:47] "GET /visualization/combined-country-temperature?country=Non-Annex+I+countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:47] "GET /visualization/combined-country-temperature?country=North+Macedonia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:47] "GET /visualization/combined-country-temperature?country=Northern+America HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:47] "GET /visualization/combined-country-temperature?country=Northern+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:47] "GET /visualization/combined-country-temperature?country=Northern+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:47] "GET /visualization/combined-country-temperature?country=Norway HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:47] "GET /visualization/combined-country-temperature?country=Oceania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:47] "GET /visualization/combined-country-temperature?country=Oman HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:47] "GET /visualization/combined-country-temperature?country=OECD HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Palau HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Pakistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Palestine HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Pacific+Islands+Trust+Territory HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Panama HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Peru HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Paraguay HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Philippines HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Papua+New+Guinea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Pitcairn+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Poland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Portugal HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Polynesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Puerto+Rico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:48] "GET /visualization/combined-country-temperature?country=Qatar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:49] "GET /visualization/combined-country-temperature?country=Republic+of+Moldova HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:49] "GET /visualization/combined-country-temperature?country=Republic+of+Korea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:49] "GET /visualization/combined-country-temperature?country=Russian+Federation HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:49] "GET /visualization/combined-country-temperature?country=Romania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:49] "GET /visualization/combined-country-temperature?country=Rwanda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:49] "GET /visualization/combined-country-temperature?country=Saint+Lucia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:49] "GET /visualization/combined-country-temperature?country=Saint+Helena,+Ascension+and+Tristan+da+Cunha HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:49] "GET /visualization/combined-country-temperature?country=Réunion HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:49] "GET /visualization/combined-country-temperature?country=Saint+Kitts+and+Nevis HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:49] "GET /visualization/combined-country-temperature?country=Saint+Pierre+and+Miquelon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Saudi+Arabia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Saint+Vincent+and+the+Grenadines HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=San+Marino HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Samoa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Sao+Tome+and+Principe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Serbia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Senegal HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Serbia+and+Montenegro HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Seychelles HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Sierra+Leone HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Small+Island+Developing+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Slovenia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Singapore HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Solomon+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:50] "GET /visualization/combined-country-temperature?country=Somalia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:51] "GET /visualization/combined-country-temperature?country=South+America HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:51] "GET /visualization/combined-country-temperature?country=South+Georgia+and+the+South+Sandwich+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:51] "GET /visualization/combined-country-temperature?country=South+Sudan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:51] "GET /visualization/combined-country-temperature?country=South+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:51] "GET /visualization/combined-country-temperature?country=South-Eastern+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:51] "GET /visualization/combined-country-temperature?country=Southern+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:51] "GET /visualization/combined-country-temperature?country=Spain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:51] "GET /visualization/combined-country-temperature?country=Sri+Lanka HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:51] "GET /visualization/combined-country-temperature?country=Southern+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:51] "GET /visualization/combined-country-temperature?country=Southern+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Sudan+(former) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Sudan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Suriname HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Svalbard+and+Jan+Mayen+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Sweden HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Switzerland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Tajikistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Syrian+Arab+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Thailand HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Timor-Leste HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Tokelau HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Togo HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Trinidad+and+Tobago HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Tunisia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:52] "GET /visualization/combined-country-temperature?country=Tonga HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:53] "GET /visualization/combined-country-temperature?country=Turkmenistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:53] "GET /visualization/combined-country-temperature?country=Turks+and+Caicos+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:53] "GET /visualization/combined-country-temperature?country=Turkey HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:53] "GET /visualization/combined-country-temperature?country=Uganda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:53] "GET /visualization/combined-country-temperature?country=Tuvalu HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:53] "GET /visualization/combined-country-temperature?country=United+Kingdom HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:53] "GET /visualization/combined-country-temperature?country=United+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:53] "GET /visualization/combined-country-temperature?country=Ukraine HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:53] "GET /visualization/combined-country-temperature?country=United+Arab+Emirates HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:53] "GET /visualization/combined-country-temperature?country=United+Republic+of+Tanzania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:53] "GET /visualization/combined-country-temperature?country=Uruguay HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=United+States+Virgin+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=Uzbekistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=Vanuatu HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=Venezuela+(Bolivarian+Republic+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=Wake+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=Viet+Nam HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=Wallis+and+Futuna+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=Western+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=Western+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=Western+Sahara HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=Western+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=Yugoslav+SFR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=Zambia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:54] "GET /visualization/combined-country-temperature?country=World HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:55] "GET /visualization/combined-country-temperature?country=Zimbabwe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:47:55] "GET /visualization/combined-country-temperature?country=Åland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=United+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=United+Kingdom HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Australia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Germany HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=India HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=France HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Japan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Brazil HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Canada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=China HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Russia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Italy HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Mexico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Spain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=South+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Afghanistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Albania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=American+Samoa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:14] "GET /visualization/combined-country-temperature?country=Algeria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:15] "GET /visualization/combined-country-temperature?country=Americas HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:15] "GET /visualization/combined-country-temperature?country=Anguilla HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:15] "GET /visualization/combined-country-temperature?country=Angola HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:15] "GET /visualization/combined-country-temperature?country=Annex+I+countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:15] "GET /visualization/combined-country-temperature?country=Andorra HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:15] "GET /visualization/combined-country-temperature?country=Antarctica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:15] "GET /visualization/combined-country-temperature?country=Antigua+and+Barbuda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:15] "GET /visualization/combined-country-temperature?country=Argentina HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:15] "GET /visualization/combined-country-temperature?country=Antigua+And+Barbuda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:15] "GET /visualization/combined-country-temperature?country=Armenia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:15] "GET /visualization/combined-country-temperature?country=Australia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:15] "GET /visualization/combined-country-temperature?country=Aruba HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Australia+and+New+Zealand HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Austria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Azerbaijan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Bahrain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Baker+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Bangladesh HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Bahamas HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Belize HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Barbados HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Belgium HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Belarus HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:16] "GET /visualization/combined-country-temperature?country=Belgium-Luxembourg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Benin HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Bolivia+(Plurinational+State+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Bosnia+and+Herzegovina HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Botswana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Bhutan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Brazil HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Brunei+Darussalam HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Bulgaria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Burkina+Faso HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=British+Virgin+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Canada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Cabo+Verde HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Cambodia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Burundi HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:17] "GET /visualization/combined-country-temperature?country=Cameroon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:18] "GET /visualization/combined-country-temperature?country=Caribbean HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:18] "GET /visualization/combined-country-temperature?country=Cayman+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:18] "GET /visualization/combined-country-temperature?country=Central+America HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:18] "GET /visualization/combined-country-temperature?country=Central+African+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:18] "GET /visualization/combined-country-temperature?country=Central+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:18] "GET /visualization/combined-country-temperature?country=Chad HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:18] "GET /visualization/combined-country-temperature?country=China HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:18] "GET /visualization/combined-country-temperature?country=Channel+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:18] "GET /visualization/combined-country-temperature?country=Chile HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:18] "GET /visualization/combined-country-temperature?country=China,+Hong+Kong+SAR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:19] "GET /visualization/combined-country-temperature?country=China,+Macao+SAR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:19] "GET /visualization/combined-country-temperature?country=Cocos+(Keeling)+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:19] "GET /visualization/combined-country-temperature?country=China,+mainland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:19] "GET /visualization/combined-country-temperature?country=China,+Taiwan+Province+of HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:19] "GET /visualization/combined-country-temperature?country=Christmas+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:19] "GET /visualization/combined-country-temperature?country=Comoros HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:19] "GET /visualization/combined-country-temperature?country=Colombia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:19] "GET /visualization/combined-country-temperature?country=Congo HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:19] "GET /visualization/combined-country-temperature?country=Costa+Rica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:19] "GET /visualization/combined-country-temperature?country=Cook+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:19] "GET /visualization/combined-country-temperature?country=Cuba HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:19] "GET /visualization/combined-country-temperature?country=Croatia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Czechia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Cyprus HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Côte+d'Ivoire HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Democratic+People's+Republic+of+Korea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Denmark HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Democratic+Republic+of+the+Congo HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Djibouti HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Dominica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Dominican+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Eastern+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Ecuador HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Eastern+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:20] "GET /visualization/combined-country-temperature?country=Eastern+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=Egypt HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=El+Salvador HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=Eritrea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=Equatorial+Guinea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=Estonia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=Ethiopia+PDR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=Eswatini HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=Ethiopia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=European+Union HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=France HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=Falkland+Islands+(Malvinas) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:21] "GET /visualization/combined-country-temperature?country=Fiji HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:22] "GET /visualization/combined-country-temperature?country=Finland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:22] "GET /visualization/combined-country-temperature?country=Faroe+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:22] "GET /visualization/combined-country-temperature?country=French+Polynesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:22] "GET /visualization/combined-country-temperature?country=French+Guiana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:22] "GET /visualization/combined-country-temperature?country=Gabon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:22] "GET /visualization/combined-country-temperature?country=French+Southern+and+Antarctic+Territories HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:22] "GET /visualization/combined-country-temperature?country=Gambia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:22] "GET /visualization/combined-country-temperature?country=Gibraltar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:22] "GET /visualization/combined-country-temperature?country=Ghana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:22] "GET /visualization/combined-country-temperature?country=Georgia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:22] "GET /visualization/combined-country-temperature?country=Greece HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:22] "GET /visualization/combined-country-temperature?country=Greenland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:23] "GET /visualization/combined-country-temperature?country=Guadeloupe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:23] "GET /visualization/combined-country-temperature?country=Grenada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:23] "GET /visualization/combined-country-temperature?country=Guatemala HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:23] "GET /visualization/combined-country-temperature?country=Guinea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:23] "GET /visualization/combined-country-temperature?country=Guinea-Bissau HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:23] "GET /visualization/combined-country-temperature?country=Haiti HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:23] "GET /visualization/combined-country-temperature?country=Holy+See HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:23] "GET /visualization/combined-country-temperature?country=Hungary HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:23] "GET /visualization/combined-country-temperature?country=Guyana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:23] "GET /visualization/combined-country-temperature?country=Honduras HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:23] "GET /visualization/combined-country-temperature?country=India HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:23] "GET /visualization/combined-country-temperature?country=Iceland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Iran+(Islamic+Republic+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Indonesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Iraq HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Ireland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Israel HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Italy HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Jamaica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Isle+of+Man HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Japan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Kazakhstan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Jordan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Kenya HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:24] "GET /visualization/combined-country-temperature?country=Kiribati HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Kyrgyzstan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Kuwait HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Land+Locked+Developing+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Lao+People's+Democratic+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Latvia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Least+Developed+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Lebanon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Liberia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Lesotho HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Libya HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Luxembourg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Liechtenstein HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Lithuania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Low+Income+Food+Deficit+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:25] "GET /visualization/combined-country-temperature?country=Madagascar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Maldives HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Malaysia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Malawi HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Malta HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Mali HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Marshall+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Martinique HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Mauritania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Mayotte HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Mauritius HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=France HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Japan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=India HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Italy HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=United+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=United+Kingdom HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Germany HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Brazil HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=China HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:26] "GET /visualization/combined-country-temperature?country=Australia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Russia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Canada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Spain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Mexico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Albania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Afghanistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=South+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=American+Samoa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Mexico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Algeria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Micronesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Melanesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Micronesia+(Federated+States+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Middle+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Americas HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Angola HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Midway+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Monaco HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Anguilla HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Annex+I+countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Andorra HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Montenegro HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Mongolia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Montserrat HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Antarctica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Antigua+And+Barbuda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Argentina HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Antigua+and+Barbuda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:27] "GET /visualization/combined-country-temperature?country=Morocco HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Myanmar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Mozambique HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Namibia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Armenia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Nauru HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Nepal HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Aruba HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Australia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Australia+and+New+Zealand HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Austria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Netherlands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=New+Caledonia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Netherlands+Antilles+(former) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Net+Food+Importing+Developing+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Bahrain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Azerbaijan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Bahamas HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=New+Zealand HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Baker+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Bangladesh HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Nicaragua HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Nigeria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Niger HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:28] "GET /visualization/combined-country-temperature?country=Niue HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Barbados HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Non-Annex+I+countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Belarus HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Belize HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Belgium HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Belgium-Luxembourg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Norfolk+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=North+Macedonia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Northern+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Northern+America HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Bhutan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Bolivia+(Plurinational+State+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Benin HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Northern+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Bosnia+and+Herzegovina HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Botswana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Norway HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=OECD HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Oceania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:29] "GET /visualization/combined-country-temperature?country=Oman HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=British+Virgin+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Brazil HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Brunei+Darussalam HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Bulgaria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Burkina+Faso HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Pacific+Islands+Trust+Territory HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Palau HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Palestine HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Pakistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Panama HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Burundi HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Cabo+Verde HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Cambodia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Canada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Cameroon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Papua+New+Guinea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Peru HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Paraguay HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Philippines HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Pitcairn+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:30] "GET /visualization/combined-country-temperature?country=Cayman+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Caribbean HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Central+America HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Poland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Central+African+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Polynesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Portugal HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Puerto+Rico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Central+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Qatar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Chad HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Channel+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Republic+of+Korea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=China HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Chile HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=China,+Hong+Kong+SAR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Republic+of+Moldova HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Romania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Russian+Federation HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Rwanda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=China,+Macao+SAR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=China,+Taiwan+Province+of HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=China,+mainland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Christmas+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Cocos+(Keeling)+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Réunion HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Saint+Helena,+Ascension+and+Tristan+da+Cunha HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Saint+Kitts+and+Nevis HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Saint+Lucia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:31] "GET /visualization/combined-country-temperature?country=Saint+Pierre+and+Miquelon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Colombia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Congo HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Comoros HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Costa+Rica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Cook+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Saint+Vincent+and+the+Grenadines HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=San+Marino HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Saudi+Arabia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Sao+Tome+and+Principe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Samoa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Croatia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Cuba HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Czechia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Cyprus HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Senegal HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Serbia+and+Montenegro HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Serbia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Côte+d'Ivoire HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Sierra+Leone HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:32] "GET /visualization/combined-country-temperature?country=Seychelles HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Democratic+Republic+of+the+Congo HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Democratic+People's+Republic+of+Korea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Djibouti HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Denmark HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Singapore HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Small+Island+Developing+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Dominica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Slovenia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Solomon+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Somalia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Dominican+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Eastern+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Ecuador HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Eastern+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=Eastern+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=South+America HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=South+Sudan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=South+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=South+Georgia+and+the+South+Sandwich+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:33] "GET /visualization/combined-country-temperature?country=South-Eastern+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Equatorial+Guinea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Egypt HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Estonia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=El+Salvador HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Eritrea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Southern+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Southern+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Sri+Lanka HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Spain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Southern+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Ethiopia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Eswatini HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Ethiopia+PDR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=European+Union HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Sudan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Sudan+(former) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Suriname HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Svalbard+and+Jan+Mayen+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Sweden HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=France HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Falkland+Islands+(Malvinas) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Faroe+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Fiji HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Finland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Switzerland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Tajikistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Syrian+Arab+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Timor-Leste HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:34] "GET /visualization/combined-country-temperature?country=Thailand HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=French+Polynesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=French+Southern+and+Antarctic+Territories HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=French+Guiana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Gambia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Gabon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Togo HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Tokelau HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Tonga HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Trinidad+and+Tobago HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Tunisia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Gibraltar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Georgia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Ghana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Greenland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Greece HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Turkey HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Turkmenistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Tuvalu HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Turks+and+Caicos+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:35] "GET /visualization/combined-country-temperature?country=Uganda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Grenada HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Guatemala HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Guadeloupe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Guinea-Bissau HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Ukraine HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Guinea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=United+Arab+Emirates HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=United+Kingdom HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=United+Republic+of+Tanzania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=United+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Guyana HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Haiti HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Honduras HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Holy+See HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Uruguay HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Hungary HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=United+States+Virgin+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Uzbekistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Vanuatu HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:36] "GET /visualization/combined-country-temperature?country=Venezuela+(Bolivarian+Republic+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Iceland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=India HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Indonesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Iran+(Islamic+Republic+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Iraq HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Viet+Nam HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Wake+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Wallis+and+Futuna+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Western+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Western+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Ireland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Isle+of+Man HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Western+Sahara HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Jamaica HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=World HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Italy HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Israel HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Western+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Zambia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:37] "GET /visualization/combined-country-temperature?country=Yugoslav+SFR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Jordan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Japan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Kazakhstan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Kenya HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Kiribati HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Zimbabwe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Åland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Kuwait HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Land+Locked+Developing+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Kyrgyzstan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Lao+People's+Democratic+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Latvia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Lebanon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Least+Developed+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Lesotho HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Libya HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:38] "GET /visualization/combined-country-temperature?country=Liberia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:39] "GET /visualization/combined-country-temperature?country=Liechtenstein HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:39] "GET /visualization/combined-country-temperature?country=Lithuania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:39] "GET /visualization/combined-country-temperature?country=Low+Income+Food+Deficit+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:39] "GET /visualization/combined-country-temperature?country=Luxembourg HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:39] "GET /visualization/combined-country-temperature?country=Madagascar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:39] "GET /visualization/combined-country-temperature?country=Malawi HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:39] "GET /visualization/combined-country-temperature?country=Malta HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:39] "GET /visualization/combined-country-temperature?country=Malaysia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:39] "GET /visualization/combined-country-temperature?country=Maldives HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:39] "GET /visualization/combined-country-temperature?country=Mali HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:40] "GET /visualization/combined-country-temperature?country=Marshall+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:40] "GET /visualization/combined-country-temperature?country=Mauritania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:40] "GET /visualization/combined-country-temperature?country=Mauritius HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:40] "GET /visualization/combined-country-temperature?country=Mayotte HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:40] "GET /visualization/combined-country-temperature?country=Martinique HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:40] "GET /visualization/combined-country-temperature?country=Micronesia+(Federated+States+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:40] "GET /visualization/combined-country-temperature?country=Mexico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:40] "GET /visualization/combined-country-temperature?country=Micronesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:40] "GET /visualization/combined-country-temperature?country=Melanesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:40] "GET /visualization/combined-country-temperature?country=Middle+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:41] "GET /visualization/combined-country-temperature?country=Midway+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:41] "GET /visualization/combined-country-temperature?country=Montenegro HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:41] "GET /visualization/combined-country-temperature?country=Monaco HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:41] "GET /visualization/combined-country-temperature?country=Montserrat HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:41] "GET /visualization/combined-country-temperature?country=Mongolia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:41] "GET /visualization/combined-country-temperature?country=Morocco HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:41] "GET /visualization/combined-country-temperature?country=Mozambique HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:41] "GET /visualization/combined-country-temperature?country=Nauru HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:41] "GET /visualization/combined-country-temperature?country=Namibia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:41] "GET /visualization/combined-country-temperature?country=Myanmar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:42] "GET /visualization/combined-country-temperature?country=Nepal HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:42] "GET /visualization/combined-country-temperature?country=Net+Food+Importing+Developing+Countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:42] "GET /visualization/combined-country-temperature?country=Netherlands+Antilles+(former) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:42] "GET /visualization/combined-country-temperature?country=Netherlands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:42] "GET /visualization/combined-country-temperature?country=New+Caledonia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:42] "GET /visualization/combined-country-temperature?country=New+Zealand HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:42] "GET /visualization/combined-country-temperature?country=Nicaragua HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:42] "GET /visualization/combined-country-temperature?country=Niger HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:42] "GET /visualization/combined-country-temperature?country=Niue HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:42] "GET /visualization/combined-country-temperature?country=Nigeria HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:43] "GET /visualization/combined-country-temperature?country=Norfolk+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:43] "GET /visualization/combined-country-temperature?country=Non-Annex+I+countries HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:43] "GET /visualization/combined-country-temperature?country=North+Macedonia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:43] "GET /visualization/combined-country-temperature?country=Northern+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:43] "GET /visualization/combined-country-temperature?country=Northern+America HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:43] "GET /visualization/combined-country-temperature?country=Northern+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:43] "GET /visualization/combined-country-temperature?country=Norway HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:43] "GET /visualization/combined-country-temperature?country=OECD HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:43] "GET /visualization/combined-country-temperature?country=Oceania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:43] "GET /visualization/combined-country-temperature?country=Oman HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:44] "GET /visualization/combined-country-temperature?country=Pacific+Islands+Trust+Territory HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:44] "GET /visualization/combined-country-temperature?country=Pakistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:44] "GET /visualization/combined-country-temperature?country=Panama HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:44] "GET /visualization/combined-country-temperature?country=Palau HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:44] "GET /visualization/combined-country-temperature?country=Palestine HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:44] "GET /visualization/combined-country-temperature?country=Papua+New+Guinea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:44] "GET /visualization/combined-country-temperature?country=Paraguay HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:44] "GET /visualization/combined-country-temperature?country=Peru HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:44] "GET /visualization/combined-country-temperature?country=Philippines HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:44] "GET /visualization/combined-country-temperature?country=Pitcairn+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:45] "GET /visualization/combined-country-temperature?country=Poland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:45] "GET /visualization/combined-country-temperature?country=Polynesia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:45] "GET /visualization/combined-country-temperature?country=Portugal HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:45] "GET /visualization/combined-country-temperature?country=Puerto+Rico HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:45] "GET /visualization/combined-country-temperature?country=Qatar HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:45] "GET /visualization/combined-country-temperature?country=Republic+of+Moldova HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:45] "GET /visualization/combined-country-temperature?country=Russian+Federation HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:45] "GET /visualization/combined-country-temperature?country=Rwanda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:45] "GET /visualization/combined-country-temperature?country=Republic+of+Korea HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:45] "GET /visualization/combined-country-temperature?country=Romania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:46] "GET /visualization/combined-country-temperature?country=Saint+Lucia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:46] "GET /visualization/combined-country-temperature?country=Saint+Kitts+and+Nevis HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:46] "GET /visualization/combined-country-temperature?country=Réunion HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:46] "GET /visualization/combined-country-temperature?country=Saint+Pierre+and+Miquelon HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:46] "GET /visualization/combined-country-temperature?country=Saint+Helena,+Ascension+and+Tristan+da+Cunha HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:46] "GET /visualization/combined-country-temperature?country=San+Marino HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:46] "GET /visualization/combined-country-temperature?country=Sao+Tome+and+Principe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:46] "GET /visualization/combined-country-temperature?country=Saudi+Arabia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:46] "GET /visualization/combined-country-temperature?country=Saint+Vincent+and+the+Grenadines HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:46] "GET /visualization/combined-country-temperature?country=Samoa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:47] "GET /visualization/combined-country-temperature?country=Senegal HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:47] "GET /visualization/combined-country-temperature?country=Serbia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:47] "GET /visualization/combined-country-temperature?country=Serbia+and+Montenegro HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:47] "GET /visualization/combined-country-temperature?country=Seychelles HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:47] "GET /visualization/combined-country-temperature?country=Sierra+Leone HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:47] "GET /visualization/combined-country-temperature?country=Singapore HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:47] "GET /visualization/combined-country-temperature?country=Small+Island+Developing+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:47] "GET /visualization/combined-country-temperature?country=Slovenia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:47] "GET /visualization/combined-country-temperature?country=Solomon+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:47] "GET /visualization/combined-country-temperature?country=Somalia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:48] "GET /visualization/combined-country-temperature?country=South+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:48] "GET /visualization/combined-country-temperature?country=South+America HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:48] "GET /visualization/combined-country-temperature?country=South+Georgia+and+the+South+Sandwich+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:48] "GET /visualization/combined-country-temperature?country=South+Sudan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:48] "GET /visualization/combined-country-temperature?country=South-Eastern+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:48] "GET /visualization/combined-country-temperature?country=Southern+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:48] "GET /visualization/combined-country-temperature?country=Spain HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:48] "GET /visualization/combined-country-temperature?country=Southern+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:48] "GET /visualization/combined-country-temperature?country=Sri+Lanka HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:48] "GET /visualization/combined-country-temperature?country=Southern+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:49] "GET /visualization/combined-country-temperature?country=Sudan+(former) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:49] "GET /visualization/combined-country-temperature?country=Sudan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:49] "GET /visualization/combined-country-temperature?country=Suriname HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:49] "GET /visualization/combined-country-temperature?country=Svalbard+and+Jan+Mayen+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:49] "GET /visualization/combined-country-temperature?country=Sweden HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:49] "GET /visualization/combined-country-temperature?country=Switzerland HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:49] "GET /visualization/combined-country-temperature?country=Tajikistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:49] "GET /visualization/combined-country-temperature?country=Syrian+Arab+Republic HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:49] "GET /visualization/combined-country-temperature?country=Thailand HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:49] "GET /visualization/combined-country-temperature?country=Timor-Leste HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:50] "GET /visualization/combined-country-temperature?country=Togo HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:50] "GET /visualization/combined-country-temperature?country=Tokelau HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:50] "GET /visualization/combined-country-temperature?country=Tonga HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:50] "GET /visualization/combined-country-temperature?country=Trinidad+and+Tobago HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:50] "GET /visualization/combined-country-temperature?country=Tunisia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:50] "GET /visualization/combined-country-temperature?country=Turkmenistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:50] "GET /visualization/combined-country-temperature?country=Turkey HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:50] "GET /visualization/combined-country-temperature?country=Turks+and+Caicos+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:50] "GET /visualization/combined-country-temperature?country=Tuvalu HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:50] "GET /visualization/combined-country-temperature?country=Uganda HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:51] "GET /visualization/combined-country-temperature?country=Ukraine HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:51] "GET /visualization/combined-country-temperature?country=United+Kingdom HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:51] "GET /visualization/combined-country-temperature?country=United+Arab+Emirates HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:51] "GET /visualization/combined-country-temperature?country=United+Republic+of+Tanzania HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:48:51] "GET /visualization/combined-country-temperature?country=United+States HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:16] "GET /visualization/combined-country-temperature?country=United+States+Virgin+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:16] "GET /visualization/combined-country-temperature?country=Uruguay HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:16] "GET /visualization/combined-country-temperature?country=Uzbekistan HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:17] "GET /visualization/combined-country-temperature?country=Vanuatu HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:17] "GET /visualization/combined-country-temperature?country=Venezuela+(Bolivarian+Republic+of) HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:17] "GET /visualization/combined-country-temperature?country=Wake+Island HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:17] "GET /visualization/combined-country-temperature?country=Viet+Nam HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:17] "GET /visualization/combined-country-temperature?country=Wallis+and+Futuna+Islands HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:17] "GET /visualization/combined-country-temperature?country=Western+Africa HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:17] "GET /visualization/combined-country-temperature?country=Western+Asia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:17] "GET /visualization/combined-country-temperature?country=Western+Europe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:17] "GET /visualization/combined-country-temperature?country=Western+Sahara HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:17] "GET /visualization/combined-country-temperature?country=World HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:17] "GET /visualization/combined-country-temperature?country=Yugoslav+SFR HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:17] "GET /visualization/combined-country-temperature?country=Zambia HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:18] "GET /visualization/combined-country-temperature?country=Zimbabwe HTTP/1.1" 200 -
+127.0.0.1 - - [09/Nov/2025 21:49:18] "GET /visualization/combined-country-temperature?country=Åland HTTP/1.1" 200 -
