@@ -27,8 +27,8 @@ Before you begin, ensure you have the following installed:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd AIvolution-main
+git clone https://github.com/alexktitarov/TerraMIndAI.git
+cd TerraMindAI
 ```
 
 ### 2. Backend Setup
