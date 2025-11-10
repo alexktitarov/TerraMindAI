@@ -2,6 +2,18 @@
 
 A comprehensive AI-powered climate education platform with interactive lessons, real-world data visualizations, and personalized learning experiences. TerraMindAI helps students learn about climate change through engaging courses, quizzes, and an interactive AI tutor named Terra.
 
+## Platform Overview
+
+### Home page
+![TerraMindAI Homepage](./homepage.gif)
+
+### Course Creation Page, Custom Feedback and Question generation
+![TerraMindAI Course Creation](./testpage.gif)
+
+
+### Data page
+![TerraMindAI Course Creation](./datapage.gif)
+
 ## Project Structure
 
 This project consists of two main components:
@@ -63,8 +75,8 @@ Express API server that acts as middleware between React frontend and Python bac
 
 1. **Clone the repository:**
 ```bash
-git clone <repository-url>
-cd Hackathone_final
+git clone https://github.com/alexktitarov/TerraMIndAI.git
+cd TerraMindAI
 ```
 
 2. **Set up Python Backend:**

@@ -24,8 +24,8 @@ TerraMindAI is an AI-powered educational platform for climate change education. 
 
 1. **Clone the repository**:
 ```bash
-git clone <repository-url>
-cd AIvolutionHAIckaton
+git clone https://github.com/alexktitarov/TerraMindAI.git
+cd TerraMindAI
 ```
 
 2. **Install dependencies**:
