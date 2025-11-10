@@ -337,7 +337,7 @@ rm -rf node_modules
 npm install
 ```
 
-### External API Connection Issues
+### API Connection Issues
 - Verify Python backend is running on port 5001
 - Ensure Python backend has correct API keys in `backend/.env`
 
@@ -345,20 +345,14 @@ npm install
 
 This project is provided as-is for educational purposes.
 
-## Testing
+## Team
 
-### Test APIs
-```bash
-./test_apis.sh
-```
-
-This script will:
-- Check if all ports are open
-- Test API endpoints
-- Provide a status summary
-
-### Test Results
-See `TEST_RESULTS.md` for detailed test results and `API_TEST_REPORT.md` for API test reports.
+| Member | GitHub |
+|---------|--------|
+| Oleksii Ktitarov | [@alexktitarov](https://github.com/alexktitarov) |
+| Ivanna Pshenychna | [@Ivanochka15](https://github.com/Ivanochka15) |
+| Yaroslav Kapeliushnyi| [@Yaroslav-Kapeliushnyi](https://github.com/Yaroslav-Kapeliushnyi) |
+| Yehor Larchenko  | [@yehor04](https://github.com/yehor04) |
 
 ## Contributing
 
